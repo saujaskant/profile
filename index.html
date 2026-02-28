@@ -1,55 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saujas Kant | STEM Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
-    /* ... existing root and header styles ... */
 
-    /* UPDATED GRID LOGIC */
-    .masonry-grid { 
-        display: grid; 
-        grid-template-columns: repeat(12, 1fr); 
-        gap: 24px; 
-        grid-auto-flow: dense; /* Helps fill gaps automatically */
-    }
+:root{
+--bg:#f8fafc;
+--navy:#1e3a8a;
+--emerald:#059669;
+--text:#0f172a;
+--muted:#64748b;
+--card:#ffffff;
+}
 
-    .card { 
-        background: #fff; 
-        border: 1px solid var(--border); 
-        display: flex; 
-        flex-direction: column; 
-        overflow: hidden; 
-        min-height: 450px; /* Prevents the "squeezed" text look */
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Inter', sans-serif;
+}
 
-    /* Robust Sizing */
-    .span-7 { grid-column: span 7; }
-    .span-5 { grid-column: span 5; }
-    .span-6 { grid-column: span 6; }
-    .span-4 { grid-column: span 4; }
-    .span-8 { grid-column: span 8; }
+body{
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
+}
 
-    /* Fix for the "Split" view - Ensure text doesn't vanish */
-    .split-card { display: flex; flex-direction: row; align-items: stretch; }
-    
-    .text-area { 
-        flex: 1; 
-        padding: 40px; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center;
-        min-width: 300px; /* Ensures text has room to breathe */
-    }
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
+background:rgba(248,250,252,0.9);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+z-index:1000;
+}
 
-    .image-area { 
-        flex: 1; 
-        background: #eee; 
-        cursor: pointer; 
-        position: relative; 
-        overflow: hidden;
-        border-left: 1px solid var(--border);
-    }
+nav a{
+text-decoration:none;
+color:var(--text);
+margin-left:25px;
+font-weight:500;
+transition:0.3s;
+}
 
-    /* Responsive fix for smaller screens */
-    @media (max-width: 1100px) {
-        .span-7, .span-5, .span-6, .span-4, .span-8 { grid-column: span 12; }
-        .split-card { flex-direction: column; }
-        .image-area { height: 250px; border-left: none; border-top: 1px solid var(--border); }
-    }
+nav a:hover{
+color:var(--navy);
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:0 10%;
+}
+
+.hero h1{
+font-size:3.5rem;
+font-weight:800;
+color:var(--navy);
+}
+
+.hero h2{
+margin-top:15px;
+font-weight:500;
+color:var(--muted);
+}
+
+.badges{
+margin-top:25px;
+}
+
+.badge{
+display:inline-block;
+background:var(--emerald);
+color:white;
+padding:8px 15px;
+border-radius:20px;
+font-size:0.9rem;
+margin-right:10px;
+}
+
+/* SECTIONS */
+section{
+padding:120px 10%;
+}
+
+.section-title{
+font-size:2rem;
+font-weight:700;
+margin-bottom:40px;
+color:var(--navy);
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+margin-bottom:30px;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* GRID */
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.highlight{
+color:var(--emerald);
+font-weight:600;
+}
+
+/* IMAGE BLOCK */
+.image-block{
+position:relative;
+cursor:pointer;
+border-radius:12px;
+overflow:hidden;
+}
+
+.image-block img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.image-block:hover img{
+transform:scale(1.05);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(transparent, rgba(0,0,0,0.7));
+color:white;
+padding:20px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:60px 10%;
+background:white;
+border-top:1px solid #e2e8f0;
+}
+
+.download{
+background:var(--navy);
+color:white;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.grid-2{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:2.5rem;
+}
+}
+
 </style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>Saujas Kant</strong></div>
+<div>
+<a href="#academics">Academics</a>
+<a href="#research">Research</a>
+<a href="#robotics">Robotics</a>
+<a href="#leadership">Leadership</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<div class="hero">
+<h1>Saujas Kant</h1>
+<h2>STEM Researcher | Robotics Leader | Physics & AI Enthusiast</h2>
+<div class="badges">
+<span class="badge">Weighted GPA: 4.1</span>
+<span class="badge">UConn Research – 2025</span>
+<span class="badge">VEX State Qualifier</span
