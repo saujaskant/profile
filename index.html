@@ -13,6 +13,7 @@
     background-color: #f5f6fa;
     color: #333;
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* prevent fixed nav from covering sections */
   }
 
   a {
@@ -25,7 +26,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: #1e90ff; /* professional blue */
+    background: #1e90ff;
     color: white;
     display: flex;
     justify-content: center;
@@ -45,6 +46,7 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
+    min-height: 50vh; /* ensures sections are visible */
   }
 
   section.visible {
@@ -92,17 +94,4 @@
   <a href="#education">Education</a>
 </nav>
 
-<!-- --- About Section --- -->
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>Technical Lead and Solution Architect in Mainframe modernization with expertise in Sales & Distribution, Billing, Insurance, and Banking domains. Skilled in system analysis, design, development, production support, and Agile methodologies.</p>
-  </div>
-</section>
-
-<!-- --- Experience Section --- -->
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="card">
-    <h3>TCS | Mainframe Lead</h3>
-    <p>Leading Life Mainframe applications modernization and production suppo
+<!-- --- About Section -
