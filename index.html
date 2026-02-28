@@ -3,63 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Research & Robotics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Professional Portfolio | Engineering & Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfcf9; /* Warm editorial white */
-            --text-color: #1a1a1a;
-            --accent-color: #555;
-            --border-color: #e5e5e5;
-            --card-bg: #ffffff;
+            --bg-color: #fafafa;
+            --text-main: #111;
+            --text-sub: #555;
+            --accent-research: #eef2ff; /* Soft Blue */
+            --accent-robotics: #fff7ed; /* Soft Orange */
+            --accent-leadership: #f0fdf4; /* Soft Green */
+            --border: #eaeaea;
         }
 
-        * { box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+        * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
         
-        .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
 
-        /* Hero Section */
-        header { margin-bottom: 100px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; letter-spacing: -1.5px; }
-        .subtitle { font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 4px; margin-top: 15px; font-weight: 300; }
+        /* Header Section */
+        header { margin-bottom: 80px; }
+        .name-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; line-height: 1; margin: 0; letter-spacing: -2px; }
+        .status-tag { display: inline-block; background: #000; color: #fff; padding: 6px 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 20px; letter-spacing: 2px; }
 
-        /* Grid Layout System */
-        .grid-layout { display: grid; grid-template-columns: 1fr 2.5fr; gap: 60px; margin-bottom: 100px; align-items: start; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; position: sticky; top: 40px; }
-
-        /* Project Cards (Bento Style) */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .project-card { background: var(--card-bg); border: 1px solid var(--border-color); overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border-radius: 2px; }
-        .project-card:hover { transform: translateY(-8px); border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .project-img { width: 100%; height: 220px; background: #f0f0f0; object-fit: cover; border-bottom: 1px solid var(--border-color); }
-        .project-info { padding: 24px; }
-        .project-info h4 { margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.3rem; }
-        .project-info p { font-size: 0.95rem; color: #555; margin: 0; }
-
-        /* Experience Blocks */
-        .exp-block { margin-bottom: 40px; }
-        .exp-block h3 { font-size: 1.4rem; margin: 0; font-weight: 600; }
-        .date { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 15px; }
+        /* The Grid System */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
         
-        .tag-container { margin-top: 15px; }
-        .tag { display: inline-block; padding: 4px 14px; border: 1px solid var(--border-color); border-radius: 30px; font-size: 0.75rem; margin-right: 6px; font-weight: 400; color: #666; }
+        .card { 
+            grid-column: span 6; 
+            background: #fff; 
+            border: 1px solid var(--border); 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* Buttons */
-        .btn-group { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
-        .btn-primary { background: #1a1a1a; color: #fff; padding: 16px 32px; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; border: 1px solid #1a1a1a; }
-        .btn-primary:hover { background: transparent; color: #1a1a1a; }
-        .btn-secondary { background: transparent; color: #1a1a1a; padding: 16px 32px; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid var(--border-color); transition: 0.3s; }
-        .btn-secondary:hover { border-color: #1a1a1a; }
+        .card:hover { border-color: #000; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
-        footer { text-align: center; font-size: 0.8rem; color: #999; padding: 80px 0; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        /* Activity Specific Styling */
+        .research-card { background-color: var(--accent-research); grid-column: span 8; }
+        .robotics-card { background-color: var(--accent-robotics); grid-column: span 4; }
+        .leadership-card { background-color: var(--accent-leadership); grid-column: span 12; }
+        .mini-card { grid-column: span 4; height: 300px; }
 
-        /* Responsive Design */
-        @media (max-width: 850px) {
-            .grid-layout { grid-template-columns: 1fr; gap: 30px; }
-            .project-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.8rem; }
-            .section-title { position: static; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; width: 100%; }
+        .card-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--text-sub); margin-bottom: 20px; display: block; }
+        .card h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.2; }
+        .card p { font-size: 1.05rem; color: var(--text-sub); max-width: 500px; }
+
+        .tech-stack { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .tech-pill { padding: 5px 12px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.5); }
+
+        /* Actions */
+        .footer-actions { margin-top: 100px; border-top: 2px solid #000; padding-top: 40px; display: flex; justify-content: space-between; align-items: center; }
+        .cta-btn { font-family: 'Playfair Display', serif; font-size: 2rem; text-decoration: none; color: #000; font-style: italic; }
+        .cta-btn:hover { padding-left: 20px; color: #555; }
+
+        @media (max-width: 900px) {
+            .card { grid-column: span 12 !important; }
+            .name-title { font-size: 3rem; }
         }
     </style>
 </head>
@@ -67,59 +71,72 @@
 
 <div class="container">
     <header>
-        <h1>Your Name</h1>
-        <div class="subtitle">Mechanical Engineering • Research • Robotics</div>
+        <h1 class="name-title">Saujaskant <br>Mishra</h1>
+        <div class="status-tag">Available for Research 2026</div>
     </header>
 
-    <div class="grid-layout">
-        <div class="section-title">Research</div>
-        <div class="content-area">
-            <div class="exp-block">
-                <h3>UCONN Laboratory of Prof. Lieu</h3>
-                <span class="date">Summer 2025 • Research Intern</span>
-                <p>Developing Physics-Informed Neural Networks (PINNs) to solve Inverse Navier-Stokes equations, optimizing fluid dynamic simulations through machine learning.</p>
-                <div class="tag-container">
-                    <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Navier-Stokes</span>
-                </div>
+    <div class="portfolio-grid">
+        
+        <div class="card research-card">
+            <div>
+                <span class="card-label">Computational Research</span>
+                <h2>Physics-Informed Neural Networks at UCONN</h2>
+                <p>Solving Inverse Navier-Stokes equations by integrating physical laws into deep learning loss functions. Bridging the gap between fluid dynamics and AI.</p>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-pill">PyTorch</span> <span class="tech-pill">Python</span> <span class="tech-pill">CFD</span> <span class="tech-pill">Navier-Stokes</span>
             </div>
         </div>
-    </div>
 
-    <div class="grid-layout">
-        <div class="section-title">Projects</div>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-img" style="background: url('https://via.placeholder.com/500x300?text=VEX+Robotics') center/cover;"></div>
-                <div class="project-info">
-                    <h4>VEX V5 High Stakes</h4>
-                    <p>Lead design for State Award-winning chassis and high-torque intake systems.</p>
-                    <div class="tag">Robotics</div>
-                </div>
+        <div class="card robotics-card">
+            <div>
+                <span class="card-label">Competitive Engineering</span>
+                <h2>VEX V5 High Stakes</h2>
+                <p>Lead Design & Strategy. 2025 State Design Award winner and World Championship qualifier.</p>
             </div>
-            <div class="project-card">
-                <div class="project-img" style="background: url('https://via.placeholder.com/500x300?text=CAD+Modeling') center/cover;"></div>
-                <div class="project-info">
-                    <h4>Topographical CAD</h4>
-                    <p>Generating 3D relief models from complex cartographic and world-building data.</p>
-                    <div class="tag">Autodesk Inventor</div>
-                </div>
+            <div class="tech-stack">
+                <span class="tech-pill">Autodesk Inventor</span> <span class="tech-pill">3D Printing</span>
             </div>
         </div>
-    </div>
 
-    <div class="grid-layout">
-        <div class="section-title">Connect</div>
-        <div class="content-area">
-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--accent-color);">Currently seeking 2026 research opportunities in bio-inspired robotics and generative engineering.</p>
-            <div class="btn-group">
-                <a href="mailto:your.email@example.com" class="btn-primary">Get In Touch</a>
-                <a href="saujaskantresume.pdf" class="btn-secondary" target="_blank">Download CV</a>
+        <div class="card leadership-card">
+            <div>
+                <span class="card-label">Community Leadership</span>
+                <h2>Connecticut Science Center • Teen Advisory Board</h2>
+                <p>Spearheading STEM outreach and exhibit curation. Managing budgets and public programming to bridge the gap between complex science and public curiosity.</p>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-pill">Board Management</span> <span class="tech-pill">STEM Outreach</span> <span class="tech-pill">Treasury</span>
             </div>
         </div>
+
+        <div class="card mini-card" style="background:#f8fafc">
+            <span class="card-label">Language</span>
+            <h2>Hindi Language School</h2>
+            <p>10 years of study and teaching assistance. Maintaining cultural and linguistic roots.</p>
+        </div>
+
+        <div class="card mini-card" style="background:#fff">
+            <span class="card-label">Interests</span>
+            <h2>World Building & Cartography</h2>
+            <p>Using CAD to model complex 3D topographical maps for fictional universes.</p>
+        </div>
+
+        <div class="card mini-card" style="background:#000; color:#fff">
+            <span class="card-label" style="color:#888">Hardware</span>
+            <h2 style="color:#fff">MakeitFixit Club</h2>
+            <p style="color:#ccc">Founder. Promoting repair culture through teardowns and mechanical maintenance.</p>
+        </div>
+
     </div>
 
-    <footer>
-        <p>&copy; 2026 • Designed for Simons Summer Research Program</p>
+    <div class="footer-actions">
+        <a href="mailto:your.email@example.com" class="cta-btn">Start a conversation →</a>
+        <a href="saujaskantresume.pdf" target="_blank" style="text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.8rem; color: #000; text-decoration: none; border-bottom: 2px solid #000;">Download CV</a>
+    </div>
+
+    <footer style="margin-top: 60px; font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">
+        &copy; 2026 Saujaskant Mishra • Built for Impact
     </footer>
 </div>
 
