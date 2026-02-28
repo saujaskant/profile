@@ -3,64 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saujas Kant | Engineering Portfolio</title>
+    <title>Portfolio | Research & Robotics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --bg: #030712; 
-            --card: #111827; 
-            --border: #1f2937; 
-            --accent: #3b82f6; 
-            --text-main: #f3f4f6;
-            --text-dim: #9ca3af;
+        :root {
+            --bg-color: #fdfcf9; /* Warm editorial white */
+            --text-color: #1a1a1a;
+            --accent-color: #555;
+            --border-color: #e5e5e5;
+            --card-bg: #ffffff;
         }
 
-        body { 
-            background-color: var(--bg); color: var(--text-main); 
-            font-family: 'Inter', system-ui, sans-serif; 
-            margin: 0; padding: 40px 20px; line-height: 1.6;
-        }
-
-        .container { max-width: 1300px; margin: 0 auto; }
-
-        header { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
-        h1 { margin: 0; font-size: 3rem; font-weight: 800; letter-spacing: -0.05em; }
-        .tagline { color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-top: 5px; }
-
-        .bento-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            grid-auto-rows: minmax(220px, auto); 
-            gap: 20px; 
-        }
-
-        .block { 
-            background: var(--card); border: 1px solid var(--border); 
-            border-radius: 24px; padding: 28px; display: flex; 
-            flex-direction: column; transition: all 0.3s ease;
-        }
-
-        .block:hover { border-color: var(--accent); transform: translateY(-4px); }
-
-        .span-2 { grid-column: span 2; }
-        .row-2 { grid-row: span 2; }
-
-        .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 12px; display: block; }
-        h2 { font-size: 1.4rem; margin: 0 0 10px 0; color: #fff; line-height: 1.2; }
-        p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+        * { box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; padding: 0; }
         
-        .subjects { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-        .pill { background: #1f2937; border: 1px solid #374151; padding: 4px 10px; border-radius: 99px; font-size: 0.7rem; font-weight: 600; color: #d1d5db; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
 
-        .btn { 
-            margin-top: auto; padding: 8px 16px; 
-            background: #2563eb; color: white; border-radius: 10px; 
-            text-decoration: none; font-weight: 700; font-size: 0.8rem; 
-            align-self: flex-start; transition: 0.2s;
-        }
+        /* Hero Section */
+        header { margin-bottom: 100px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; letter-spacing: -1.5px; }
+        .subtitle { font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 4px; margin-top: 15px; font-weight: 300; }
 
-        @media (max-width: 900px) {
-            .bento-grid { grid-template-columns: 1fr; }
-            .span-2 { grid-column: span 1; }
+        /* Grid Layout System */
+        .grid-layout { display: grid; grid-template-columns: 1fr 2.5fr; gap: 60px; margin-bottom: 100px; align-items: start; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; border-top: 1px solid var(--border-color); padding-top: 20px; position: sticky; top: 40px; }
+
+        /* Project Cards (Bento Style) */
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border-color); overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border-radius: 2px; }
+        .project-card:hover { transform: translateY(-8px); border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .project-img { width: 100%; height: 220px; background: #f0f0f0; object-fit: cover; border-bottom: 1px solid var(--border-color); }
+        .project-info { padding: 24px; }
+        .project-info h4 { margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+        .project-info p { font-size: 0.95rem; color: #555; margin: 0; }
+
+        /* Experience Blocks */
+        .exp-block { margin-bottom: 40px; }
+        .exp-block h3 { font-size: 1.4rem; margin: 0; font-weight: 600; }
+        .date { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 15px; }
+        
+        .tag-container { margin-top: 15px; }
+        .tag { display: inline-block; padding: 4px 14px; border: 1px solid var(--border-color); border-radius: 30px; font-size: 0.75rem; margin-right: 6px; font-weight: 400; color: #666; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .btn-primary { background: #1a1a1a; color: #fff; padding: 16px 32px; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; border: 1px solid #1a1a1a; }
+        .btn-primary:hover { background: transparent; color: #1a1a1a; }
+        .btn-secondary { background: transparent; color: #1a1a1a; padding: 16px 32px; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid var(--border-color); transition: 0.3s; }
+        .btn-secondary:hover { border-color: #1a1a1a; }
+
+        footer { text-align: center; font-size: 0.8rem; color: #999; padding: 80px 0; border-top: 1px solid var(--border-color); margin-top: 40px; }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .grid-layout { grid-template-columns: 1fr; gap: 30px; }
+            .project-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.8rem; }
+            .section-title { position: static; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; width: 100%; }
         }
     </style>
 </head>
@@ -68,78 +67,60 @@
 
 <div class="container">
     <header>
-        <h1>Saujas Kant</h1>
-        <div class="tagline">Aspiring Engineering Major | Researcher | Technical Leader</div>
+        <h1>Your Name</h1>
+        <div class="subtitle">Mechanical Engineering • Research • Robotics</div>
     </header>
 
-    <div class="bento-grid">
-        
-        <div class="block span-2">
-            <span class="label">Deep Learning & Fluid Dynamics // UCONN</span>
-            <h2>Inverse Navier-Stokes via Physics-Informed Neural Networks (PINNs)</h2>
-            <p>Developing computational models to solve **Non-linear PDEs** under Dr. Chang Liu. Implementing **Least Squares functional optimization** and **Adam/L-BFGS optimizers** to minimize loss functions in fluid flow simulations. Bridging Python-based machine learning with classical fluid mechanics.</p>
-            <a href="#" class="btn">View Technical Case Study</a>
-        </div>
-
-        <div class="block row-2">
-            <span class="label">Academic Excellence</span>
-            <h2>Core Rigor & GPA</h2>
-            <p><strong>Weighted GPA: 4.1</strong> | 8-Quarter Honor Roll</p>
-            <div class="subjects">
-                <span class="pill">AP Calculus BC</span>
-                <span class="pill">AP Physics 1 & 2</span>
-                <span class="pill">AP Computer Science A</span>
-                <span class="pill">Engineering Drafting (H)</span>
-                <span class="pill">Robotics Engineering (H)</span>
-                <span class="pill">AP Environmental Sci</span>
-                <span class="pill">AP Lang & Comp</span>
+    <div class="grid-layout">
+        <div class="section-title">Research</div>
+        <div class="content-area">
+            <div class="exp-block">
+                <h3>UCONN Laboratory of Prof. Lieu</h3>
+                <span class="date">Summer 2025 • Research Intern</span>
+                <p>Developing Physics-Informed Neural Networks (PINNs) to solve Inverse Navier-Stokes equations, optimizing fluid dynamic simulations through machine learning.</p>
+                <div class="tag-container">
+                    <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Navier-Stokes</span>
+                </div>
             </div>
-            <p style="margin-top: 20px; font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 15px;">Advanced Quantitative Track.</p>
         </div>
-
-        <div class="block">
-            <span class="label">Applied Engineering</span>
-            <h2>Vex Robotics Strategy</h2>
-            <p>Leading AHS Falconbots (V5) to 2025 States. Previously directed World Championship qualifying teams, securing 1st Place (Design) through iterative CAD modeling.</p>
-        </div>
-
-        <div class="block">
-            <span class="label">Design & Fabrication</span>
-            <h2>MakeitFixit Founder</h2>
-            <p>Directing CAD-to-fabrication cycles for 3D-printed mechanical solutions, addressing real-world school infrastructure needs through engineering design.</p>
-        </div>
-
-        <div class="block" style="background: linear-gradient(135deg, #1e3a8a, #111827); border: none;">
-            <span class="label" style="color: #60a5fa;">Professional Overview</span>
-            <h2>Official Resume</h2>
-            <a href="./saujaskantresume.pdf" download class="btn" style="background: #fff; color: #1e3a8a; width: 100%; text-align: center; box-sizing: border-box;">Download PDF</a>
-        </div>
-
-        <div class="block span-2">
-            <span class="label">Community Service & Leadership</span>
-            <h2>Educational Support & Mentorship</h2>
-            <p>Applying quantitative and linguistic skills to empower the community. Providing Math/Hindi tutoring, assisting special-needs students via the Anurag Society, and volunteering for ESY programs.</p>
-        </div>
-
-        <div class="block">
-            <span class="label">Communication</span>
-            <h2>Seal of Biliteracy</h2>
-            <p>Attained State Seal for Hindi proficiency. 2025 Gold Medalist in COLTS Poetry, demonstrating the high-level communication required for collaborative research.</p>
-        </div>
-
-        <div class="block">
-            <span class="label">Leadership</span>
-            <h2>CSC Executive Co-Chair</h2>
-            <p>Managing budgets and planning student-driven science exhibits at the CT Science Center, translating scientific theory into public engagement.</p>
-        </div>
-
-        <div class="block">
-            <span class="label">Discipline & Resilience</span>
-            <h2>NPS Junior Ranger</h2>
-            <p>Over a decade of commitment with 25+ badges earned, reflecting the dedication and protective stewardship essential for scientific exploration.</p>
-        </div>
-
     </div>
+
+    <div class="grid-layout">
+        <div class="section-title">Projects</div>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img" style="background: url('https://via.placeholder.com/500x300?text=VEX+Robotics') center/cover;"></div>
+                <div class="project-info">
+                    <h4>VEX V5 High Stakes</h4>
+                    <p>Lead design for State Award-winning chassis and high-torque intake systems.</p>
+                    <div class="tag">Robotics</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background: url('https://via.placeholder.com/500x300?text=CAD+Modeling') center/cover;"></div>
+                <div class="project-info">
+                    <h4>Topographical CAD</h4>
+                    <p>Generating 3D relief models from complex cartographic and world-building data.</p>
+                    <div class="tag">Autodesk Inventor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-layout">
+        <div class="section-title">Connect</div>
+        <div class="content-area">
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--accent-color);">Currently seeking 2026 research opportunities in bio-inspired robotics and generative engineering.</p>
+            <div class="btn-group">
+                <a href="mailto:your.email@example.com" class="btn-primary">Get In Touch</a>
+                <a href="saujaskantresume.pdf" class="btn-secondary" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 • Designed for Simons Summer Research Program</p>
+    </footer>
 </div>
 
 </body>
