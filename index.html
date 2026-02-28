@@ -22,6 +22,9 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Inter', sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
@@ -31,23 +34,25 @@ color:var(--text);
 line-height:1.8;
 }
 
+/* NAVBAR */
 nav{
 position:fixed;
 top:0;
 width:100%;
 padding:18px 8%;
-background:rgba(248,250,252,0.95);
+background:rgba(255,255,255,0.95);
 backdrop-filter:blur(8px);
 display:flex;
 justify-content:space-between;
+align-items:center;
 z-index:1000;
-border-bottom:1px solid #e2e8f0;
+border-bottom:1px solid #e5e7eb;
 }
 
 nav a{
 text-decoration:none;
 color:var(--text);
-margin-left:20px;
+margin-left:25px;
 font-weight:500;
 font-size:0.95rem;
 }
@@ -56,12 +61,19 @@ nav a:hover{
 color:var(--navy);
 }
 
+/* OFFSET FOR FIXED NAV */
+section{
+padding:120px 8%;
+scroll-margin-top:100px;
+}
+
 .hero{
 min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 padding:0 8%;
+margin-top:80px;
 }
 
 .hero h1{
@@ -74,6 +86,7 @@ color:var(--navy);
 margin-top:15px;
 color:var(--muted);
 font-weight:500;
+max-width:600px;
 }
 
 .badges{
@@ -87,37 +100,32 @@ color:white;
 padding:8px 16px;
 border-radius:20px;
 font-size:0.85rem;
-margin:5px;
+margin:6px 6px 0 0;
 }
 
-section{
-padding:120px 8%;
-}
-
+/* SECTION TITLES */
 .section-title{
-font-size:2.2rem;
-font-weight:700;
-color:var(--navy);
+font-size:2.3rem;
+font-weight:800;
 margin-bottom:50px;
+color:var(--navy);
 }
 
+/* CARDS */
 .card{
 background:var(--card);
-padding:30px;
+padding:35px;
 border-radius:14px;
 box-shadow:0 15px 35px rgba(0,0,0,0.05);
-margin-bottom:30px;
+margin-bottom:35px;
 transition:0.3s;
-opacity:0;
-transform:translateY(40px);
 }
 
-.card.visible{
-opacity:1;
-transform:translateY(0);
+.card:hover{
+transform:translateY(-6px);
 }
 
-.grid-2{
+.grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
@@ -125,11 +133,11 @@ gap:40px;
 
 .timeline{
 border-left:3px solid var(--emerald);
-padding-left:25px;
+padding-left:30px;
 }
 
 .timeline-item{
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 .highlight{
@@ -137,70 +145,15 @@ color:var(--emerald);
 font-weight:600;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:80px 8%;
 background:white;
-border-top:1px solid #e2e8f0;
+border-top:1px solid #e5e7eb;
 }
 
 .download{
 background:var(--navy);
 color:white;
-padding:12px 28px;
-border-radius:25px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-}
-
-@media(max-width:900px){
-.grid-2{
-grid-template-columns:1fr;
-}
-.hero h1{
-font-size:2.4rem;
-}
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<div><strong>Saujas Kant</strong></div>
-<div>
-<a href="#academics">Academics</a>
-<a href="#research">Research</a>
-<a href="#robotics">Robotics</a>
-<a href="#leadership">Leadership</a>
-<a href="#service">Service</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<div class="hero">
-<h1>Saujas Kant</h1>
-<h2>STEM Researcher | Robotics Leader | Physics & AI Enthusiast</h2>
-<div class="badges">
-<span class="badge">Weighted GPA 4.1</span>
-<span class="badge">UConn Research 2025</span>
-<span class="badge">VEX World Championship Qualifier</span>
-<span class="badge">Seal of Biliteracy – Hindi</span>
-</div>
-</div>
-
-<section id="academics">
-<div class="section-title">Academics</div>
-<div class="card">
-<p><strong>Avon High School, Avon CT — Junior</strong></p>
-<p>Honor Roll – All 8 Quarters</p>
-<p class="highlight">AP Coursework</p>
-<p>AP Computer Science A, AP Calculus BC, AP Physics 1 & 2, AP Environmental Science, AP Lang, APUSH, AP CSP</p>
-<p>Engineering Drafting & Design (H), Engineering for Robotics (H)</p>
-<p>President Award – Outstanding Academic Excellence (2023)</p>
-</div>
-</section>
-
-<section id="research">
-<div c
+padd
