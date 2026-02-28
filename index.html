@@ -1,205 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saujas Kant | STEM Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+<title>Saurabh Kant | Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body{
-margin:0;
-font-family:'Inter', sans-serif;
-background:#f8fafc;
-color:#0f172a;
-}
+  /* --- General Styles --- */
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+    scroll-behavior: smooth;
+  }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
-z-index:1000;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-nav a{
-text-decoration:none;
-color:#1e3a8a;
-margin-left:25px;
-font-weight:600;
-}
+  /* --- Top Navigation --- */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1e90ff; /* professional blue */
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
 
-nav a:hover{
-color:#059669;
-}
+  nav a:hover {
+    text-decoration: underline;
+  }
 
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:0 8%;
-margin-top:60px;
-}
+  /* --- Sections --- */
+  section {
+    padding: 100px 10% 60px 10%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
 
-.hero h1{
-font-size:3.5rem;
-font-weight:800;
-color:#1e3a8a;
-margin:0;
-}
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.hero p{
-margin-top:15px;
-font-size:1.2rem;
-color:#64748b;
-}
+  /* --- Section Titles --- */
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e90ff;
+  }
 
-.badge{
-display:inline-block;
-background:#059669;
-color:white;
-padding:6px 14px;
-border-radius:20px;
-font-size:0.85rem;
-margin:8px 8px 0 0;
-}
+  /* --- Cards for Sections --- */
+  .card {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-section{
-padding:120px 8%;
-scroll-margin-top:80px;
-}
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  }
 
-h2{
-color:#1e3a8a;
-font-size:2rem;
-margin-bottom:40px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
-margin-bottom:30px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-footer{
-text-align:center;
-padding:60px 8%;
-background:white;
-border-top:1px solid #e2e8f0;
-}
-
-@media(max-width:900px){
-.hero h1{
-font-size:2.2rem;
-}
-}
+  /* --- Responsive --- */
+  @media(max-width: 768px){
+    section {
+      padding: 80px 5% 40px 5%;
+    }
+  }
 </style>
 </head>
-
 <body>
 
+<!-- --- Navigation --- -->
 <nav>
-<div><strong>Saujas Kant</strong></div>
-<div>
-<a href="#academics">Academics</a>
-<a href="#research">Research</a>
-<a href="#robotics">Robotics</a>
-<a href="#leadership">Leadership</a>
-<a href="#contact">Contact</a>
-</div>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
 </nav>
 
-<div class="hero">
-<h1>Saujas Kant</h1>
-<p>STEM Researcher | Robotics Leader | Physics & AI Enthusiast</p>
-
-<div>
-<span class="badge">Weighted GPA 4.1</span>
-<span class="badge">UConn Research 2025</span>
-<span class="badge">VEX World Qualifier</span>
-<span class="badge">Seal of Biliteracy – Hindi</span>
-</div>
-</div>
-
-<section id="academics">
-<h2>Academics</h2>
-<div class="card">
-<strong>Avon High School — Junior</strong><br><br>
-Honor Roll (All 8 Quarters)<br><br>
-AP Computer Science A, AP Calculus BC, AP Physics 1 & 2,<br>
-AP Environmental Science, AP Lang, APUSH, AP CSP<br><br>
-Engineering Drafting & Design (H), Engineering for Robotics (H)
-</div>
+<!-- --- About Section --- -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>Technical Lead and Solution Architect in Mainframe modernization with expertise in Sales & Distribution, Billing, Insurance, and Banking domains. Skilled in system analysis, design, development, production support, and Agile methodologies.</p>
+  </div>
 </section>
 
-<section id="research">
-<h2>Research & Internships</h2>
-
-<div class="card">
-<strong>University of Connecticut — Summer 2025</strong><br><br>
-Researched the Inverse Navier-Stokes Equation using Physics-Informed Neural Networks and Least Squares methods under Dr. Chang Liu.
-</div>
-
-<div class="card">
-<strong>Connecticut Science Center</strong><br><br>
-Executive Co-Chair (2024–25)<br>
-Teen Advisory Council Treasurer (2025)<br>
-INNOVATE & INVESTIGATE Programs
-</div>
-</section>
-
-<section id="robotics">
-<h2>Robotics & Engineering</h2>
-
-<div class="card">
-VEX V5 Robotics — State Championship Qualifier
-</div>
-
-<div class="card">
-VEX IQ Robotics — 1st Place Design | World Championship
-</div>
-
-<div class="card">
-MakeitFixit Club — Founder & Technical Director
-</div>
-</section>
-
-<section id="leadership">
-<h2>Leadership & Achievements</h2>
-
-<div class="card">
-Math Team | AMC 8 Top 5%<br>
-Model UN<br>
-Seal of Biliteracy – Hindi<br>
-Congressional App Challenge<br>
-National Geographic Bee<br>
-Black Belt – MMA
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-Email: saujaskant@gmail.com
-</div>
-</section>
-
-<footer>
-Thank you for visiting.
-</footer>
-
-</body>
-</html>
+<!-- --- Experience Section --- -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>TCS | Mainframe Lead</h3>
+    <p>Leading Life Mainframe applications modernization and production suppo
