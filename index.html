@@ -3,111 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saujaskant | Engineering & Research</title>
+    <title>Saujaskant | Mechanical Engineering Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fafafa;
-            --text-main: #111;
-            --text-sub: #555;
-            --border: #eaeaea;
-            --accent-research: #eef2ff;
-            --accent-robotics: #fff7ed;
-            --accent-fixit: #fffbeb;
+            --bg: #fafafa;
+            --text: #111;
+            --sub: #555;
+            --border: #ececec;
+            /* Personality Palette */
+            --fixit: #fffbeb;    /* Builder/Hands-on */
+            --research: #eef2ff; /* Computational/Theory */
+            --robotics: #fff7ed; /* Competitive/Engineering */
+            --leadership: #f0fdf4; /* Civic/Advocacy */
+            --culture: #fdf2f8;   /* Personal/Roots */
+            --creative: #f5f3ff;  /* Design/Logic */
         }
 
-        * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1); }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
         
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 80px 24px; }
 
-        header { margin-bottom: 60px; }
-        .name-title { font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1; margin: 0; letter-spacing: -3px; }
-        .status-tag { display: inline-block; background: #000; color: #fff; padding: 6px 15px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-top: 25px; letter-spacing: 2px; }
+        header { margin-bottom: 80px; }
+        .name-title { font-family: 'Playfair Display', serif; font-size: 6rem; line-height: 0.9; margin: 0; letter-spacing: -4px; }
+        .status-tag { display: inline-block; background: #000; color: #fff; padding: 8px 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 30px; letter-spacing: 3px; border-radius: 2px; }
 
-        /* Project Grid Architecture */
-        .portfolio-grid { display: flex; flex-direction: column; gap: 32px; }
-
-        .expertise-pair {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            background: #fff;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            min-height: 400px;
+        /* Masonry Bento Grid */
+        .masonry-grid { 
+            display: grid; 
+            grid-template-columns: repeat(12, 1fr); 
+            grid-auto-rows: minmax(180px, auto);
+            gap: 24px; 
         }
 
-        .expertise-pair:hover { border-color: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-
-        .text-block { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-        .image-block { 
-            position: relative; 
-            cursor: pointer; 
+        .card { 
+            background: #fff; 
+            border: 1px solid var(--border); 
+            display: flex; 
+            flex-direction: column; 
             overflow: hidden; 
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
         }
+        .card:hover { border-color: #000; transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); z-index: 10; }
 
-        .rotating-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            filter: grayscale(20%);
-        }
+        /* Sizing Logic */
+        .span-8 { grid-column: span 8; }
+        .span-4 { grid-column: span 4; }
+        .span-6 { grid-column: span 6; }
+        .medium { grid-row: span 2; }
+        .tall { grid-row: span 3; }
 
-        .image-block:hover .rotating-img { transform: scale(1.05); filter: grayscale(0%); }
+        /* Split-Block Architecture */
+        .split-card { display: flex; flex-direction: row; height: 100%; }
+        .text-area { flex: 1.2; padding: 45px; display: flex; flex-direction: column; justify-content: center; }
+        .image-area { flex: 0.8; background: #eee; cursor: pointer; position: relative; overflow: hidden; border-left: 1px solid var(--border); }
+        
+        .image-area img { width: 100%; height: 100%; object-fit: cover; }
+        .image-area:hover img { transform: scale(1.1); filter: brightness(0.7); }
+        .click-hint { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; opacity: 0; pointer-events: none; border: 1px solid #fff; padding: 10px; }
+        .image-area:hover .click-hint { opacity: 1; }
 
-        /* Overlay text on image */
-        .img-hint {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.9);
-            padding: 8px 15px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid #000;
-        }
+        /* UI Elements */
+        .label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--sub); margin-bottom: 15px; display: block; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; }
+        p { font-size: 1rem; color: var(--sub); line-height: 1.6; }
+        .pill { padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-right: 5px; background: #fff; }
 
-        .card-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--text-sub); margin-bottom: 20px; display: block; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0 0 20px 0; line-height: 1.1; }
-        p { font-size: 1.05rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 25px; }
+        /* Modal Overlay */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: #fff; overflow-y: auto; padding: 60px; }
+        .modal-content { max-width: 850px; margin: 0 auto; animation: slideIn 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+        @keyframes slideIn { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close { position: fixed; top: 30px; right: 40px; font-size: 3rem; cursor: pointer; z-index: 1001; font-weight: 200; }
 
-        .tech-pill { padding: 5px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 8px; background: #fafafa; }
-
-        /* Detail Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background: rgba(255,255,255,0.98);
-            overflow-y: auto;
-            padding: 40px;
-        }
-
-        .modal-content {
-            max-width: 800px;
-            margin: 40px auto;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .close-btn { font-size: 3rem; cursor: pointer; position: fixed; top: 20px; right: 40px; font-weight: 200; }
-
-        .footer-actions { margin-top: 80px; border-top: 2px solid #000; padding-top: 40px; display: flex; justify-content: space-between; align-items: center; }
-        .cta-btn { font-family: 'Playfair Display', serif; font-size: 2rem; text-decoration: none; color: #000; font-style: italic; }
-
-        @media (max-width: 900px) {
-            .expertise-pair { grid-template-columns: 1fr; }
-            .image-block { height: 300px; order: -1; }
-            .name-title { font-size: 3.5rem; }
+        @media (max-width: 1000px) {
+            .span-8, .span-4, .span-6 { grid-column: span 12; }
+            .split-card { flex-direction: column; }
+            .image-area { height: 280px; border-left: none; border-top: 1px solid var(--border); }
+            .name-title { font-size: 4rem; }
         }
     </style>
 </head>
@@ -116,109 +89,141 @@
 <div class="container">
     <header>
         <h1 class="name-title">Saujaskant</h1>
-        <div class="status-tag">Researcher • Builder • Engineer</div>
+        <div class="status-tag">Prospective Mechanical Engineer</div>
     </header>
 
-    <div class="portfolio-grid">
+    <div class="masonry-grid">
         
-        <div class="expertise-pair" style="border-left: 8px solid var(--accent-fixit);">
-            <div class="text-block">
-                <span class="card-label">Leadership & Impact</span>
-                <h2>MakeitFixit Club</h2>
-                <p>Establishing a hands-on culture of mechanical literacy. I lead a team in teardowns and repairs to demystify complex hardware and promote a sustainable repair-first mindset.</p>
-                <div>
-                    <span class="tech-pill">Mechanical Design</span>
-                    <span class="tech-pill">Mentorship</span>
-                </div>
-            </div>
-            <div class="image-block" onclick="openModal('fixit')">
-                <img src="https://via.placeholder.com/600x800?text=Hardware+Teardown" class="rotating-img" alt="Fixit Club Photo">
-                <div class="img-hint">Click for Detail →</div>
+        <div class="card span-5 medium" style="background: var(--fixit); padding: 45px;">
+            <span class="label">Founder & Maker</span>
+            <h2>MakeitFixit Club</h2>
+            <p>Dedicated to mechanical curiosity. I lead teardowns and repairs to understand the fundamental engineering behind everyday hardware.</p>
+            <div class="image-area" style="margin-top:20px; height:180px; border: 1px solid var(--border);" onclick="openModal('fixit')">
+                <img src="https://via.placeholder.com/600x400?text=Hardware+Teardown">
+                <div class="click-hint">The Process</div>
             </div>
         </div>
 
-        <div class="expertise-pair" style="border-left: 8px solid var(--accent-research);">
-            <div class="text-block">
-                <span class="card-label">Computational Physics</span>
-                <h2>PINNs at UCONN</h2>
-                <p>Investigating the intersection of Deep Learning and Fluid Dynamics. My work focuses on training neural networks to satisfy the Navier-Stokes equations for predictive modeling.</p>
-                <div>
-                    <span class="tech-pill">PyTorch</span>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Inverse Navier-Stokes</span>
+        <div class="card span-7 medium split-card" style="border-top: 6px solid var(--research);">
+            <div class="text-area">
+                <span class="label">Computational Theory</span>
+                <h2>PINNs & Navier-Stokes</h2>
+                <p>Bridging the gap between Machine Learning and Fluid Dynamics through Physics-Informed Neural Networks.</p>
+                <div style="margin-top: 15px;">
+                    <span class="pill">PyTorch</span><span class="pill">Fluid Mechanics</span>
                 </div>
             </div>
-            <div class="image-block" onclick="openModal('research')">
-                <img src="https://via.placeholder.com/600x800?text=PINN+Architecture" class="rotating-img" alt="Research Plot">
-                <div class="img-hint">View Analysis →</div>
+            <div class="image-area" onclick="openModal('research')">
+                <img src="https://via.placeholder.com/600x600?text=PINN+Analysis">
+                <div class="click-hint">Deep Dive</div>
             </div>
         </div>
 
-        <div class="expertise-pair" style="border-left: 8px solid var(--accent-robotics);">
-            <div class="text-block">
-                <span class="card-label">Lead Engineering</span>
-                <h2>VEX Robotics (23761E)</h2>
-                <p>Designed a custom high-torque intake and structurally redundant chassis. Recognized with the State Design Award and 2025 World Championship qualification.</p>
-                <div>
-                    <span class="tech-pill">Autodesk Inventor</span>
-                    <span class="tech-pill">3D Printing</span>
-                </div>
+        <div class="card span-6 medium split-card" style="border-top: 6px solid var(--robotics);">
+            <div class="text-area">
+                <span class="label">Mechanical Design</span>
+                <h2>VEX Championship Robotics</h2>
+                <p>Leading design iterations for award-winning high-torque systems and optimized chassis integrity.</p>
             </div>
-            <div class="image-block" onclick="openModal('robotics')">
-                <img src="https://via.placeholder.com/600x800?text=Robot+Chassis" class="rotating-img" alt="Robot Photo">
-                <div class="img-hint">See Build Log →</div>
+            <div class="image-area" onclick="openModal('robotics')">
+                <img src="https://via.placeholder.com/600x600?text=VEX+V5+Design">
+                <div class="click-hint">See Build</div>
+            </div>
+        </div>
+
+        <div class="card span-6 medium split-card" style="border-top: 6px solid var(--leadership);">
+            <div class="text-area">
+                <span class="label">Civic Engineering</span>
+                <h2>Science Center Teen Board</h2>
+                <p>Bridging the communication gap between technical research and public curiosity through exhibit curation.</p>
+            </div>
+            <div class="image-area" onclick="openModal('leadership')">
+                <img src="https://via.placeholder.com/600x600?text=Exhibit+Curation">
+                <div class="click-hint">Impact</div>
+            </div>
+        </div>
+
+        <div class="card span-4 medium" style="background: var(--culture); padding: 45px;">
+            <span class="label">Community Commitment</span>
+            <h2>Cultural Roots</h2>
+            <p>A ten-year journey through Hindi Language study and classroom mentoring.</p>
+            <div class="image-area" style="margin-top:20px; height:180px; border: 1px solid var(--border);" onclick="openModal('hindi')">
+                <img src="https://via.placeholder.com/600x400?text=Language+School">
+                <div class="click-hint">Story</div>
+            </div>
+        </div>
+
+        <div class="card span-8 medium split-card" style="border-top: 6px solid var(--creative);">
+            <div class="text-area">
+                <span class="label">Geometric Logic</span>
+                <h2>Topographical CAD</h2>
+                <p>Synthesizing world-building with engineering precision to create detailed 3D map models.</p>
+            </div>
+            <div class="image-area" onclick="openModal('cartography')">
+                <img src="https://via.placeholder.com/600x600?text=3D+Map+Model">
+                <div class="click-hint">View Maps</div>
             </div>
         </div>
 
     </div>
 
-    <div class="footer-actions">
-        <a href="mailto:your-email@example.com" class="cta-btn">Let's build together →</a>
-        <a href="saujaskantresume.pdf" target="_blank" style="text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.8rem; color: #000; text-decoration: none; border-bottom: 2px solid #000;">Download CV</a>
+    <div style="margin-top: 100px; padding-bottom: 80px; display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #000; padding-top: 40px;">
+        <a href="mailto:your-email@example.com" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-decoration: none; color: #000; font-style: italic;">Contact →</a>
+        <a href="saujaskantresume.pdf" target="_blank" style="text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.8rem; color: #000; text-decoration: none; border-bottom: 2px solid #000;">Download Complete CV</a>
     </div>
 </div>
 
-<div id="projectModal" class="modal">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <div class="modal-content" id="modalContent">
-        </div>
+<div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content" id="modal-body"></div>
 </div>
 
 <script>
-    const data = {
-        fixit: {
-            title: "MakeitFixit: Restoring Mechanical Intuition",
-            content: "Detailed story about the club's founding, specific teardowns (e.g., small engines or electronics), and the impact on school culture. Focus on problem-solving skills."
+    const projectContent = {
+        research: { 
+            title: "PINNs & Neural Modeling", 
+            body: "A technical dive into solving Inverse Navier-Stokes equations by embedding physical laws into neural network loss functions. This research bridges the gap between traditional CFD and modern deep learning." 
         },
-        research: {
-            title: "PINNs & Inverse Navier-Stokes",
-            content: "Technical breakdown of the UCONN summer internship. Discussion on loss function architecture and hyperparameter tuning for fluid velocity prediction."
+        fixit: { 
+            title: "The MakeitFixit Philosophy", 
+            body: "Founded on the belief that engineering begins with understanding existing systems. I lead teardowns of mechanical systems to foster a 'builder's intuition' among students." 
         },
-        robotics: {
-            title: "VEX 23761E: Design Strategy",
-            content: "CAD iterations, stress testing the intake mechanism, and the strategy that led to the State Design Award."
+        robotics: { 
+            title: "Precision in VEX Robotics", 
+            body: "Documentation of the design award-winning chassis and high-torque intake system. Focus on structural redundancy and iterative prototyping using Autodesk Inventor." 
+        },
+        leadership: { 
+            title: "Communicating Science", 
+            body: "Managing outreach for the CT Science Center. My role involves translating complex mechanical and scientific concepts into interactive exhibits for the public." 
+        },
+        hindi: { 
+            title: "Linguistic Commitment", 
+            body: "Ten years of dedicated study at the Hindi Language School, progressing from student to teaching assistant to support the next generation of learners." 
+        },
+        cartography: { 
+            title: "Cartography as Engineering", 
+            body: "Using CAD software to convert fictional 2D maps into functional 3D topographical models, applying geometric constraints to imaginative landscapes." 
         }
     };
 
     function openModal(id) {
-        const modal = document.getElementById('projectModal');
-        const content = document.getElementById('modalContent');
-        content.innerHTML = `
-            <h1 style="font-family:'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px;">${data[id].title}</h1>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #444;">${data[id].content}</p>
+        const body = document.getElementById('modal-body');
+        body.innerHTML = `
+            <h1 style="font-family:'Playfair Display', serif; font-size: 4rem; margin-bottom: 30px;">${projectContent[id].title}</h1>
+            <p style="font-size: 1.5rem; line-height: 1.7; color: #333;">${projectContent[id].body}</p>
         `;
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // Disable scroll
+        document.getElementById('modal').style.display = "block";
+        document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
-        document.getElementById('projectModal').style.display = "none";
+        document.getElementById('modal').style.display = "none";
         document.body.style.overflow = "auto";
     }
 
-    // Close on click outside
+    // Close on background click
     window.onclick = function(event) {
-        if (event.target == document.getElementById('projectModal')) { closeModal(); }
+        if (event.target == document.getElementById('modal')) closeModal();
     }
 </script>
 
