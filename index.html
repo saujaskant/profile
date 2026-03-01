@@ -1,97 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saurabh Kant | Resume</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  /* --- General Styles --- */
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #f5f6fa;
-    color: #333;
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* prevent fixed nav from covering sections */
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saujas Kant | Future Mechanical Engineer</title>
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
 
-  /* --- Top Navigation --- */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #1e90ff;
-    color: white;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
+        /* Hero */
+        .hero {
+            padding: 130px 20px;
+            text-align: center;
+            background: #ffffff;
+        }
+        .hero h1 {
+            font-size: 56px;
+            margin: 0;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 22px;
+            margin-top: 15px;
+            color: #444;
+        }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+        /* Navigation */
+        nav {
+            text-align: center;
+            padding: 18px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #0a3d62;
+            font-weight: 600;
+            font-size: 16px;
+        }
 
-  /* --- Sections --- */
-  section {
-    padding: 100px 10% 60px 10%;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-    min-height: 50vh; /* ensures sections are visible */
-  }
+        /* Sections */
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+        .label {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            color: #0a3d62;
+        }
 
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+        /* Two-column layout */
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .two-col .text {
+            flex: 1 1 55%;
+        }
+        .two-col .image {
+            flex: 1 1 40%;
+        }
+        .two-col .image img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            height: 260px;
+            background: #ddd;
+        }
 
-  /* --- Section Titles --- */
-  section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #1e90ff;
-  }
+        /* Alternating layout */
+        .reverse {
+            flex-direction: row-reverse;
+        }
 
-  /* --- Cards for Sections --- */
-  .card {
-    background: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+        @media (max-width: 768px) {
+            .two-col, .reverse {
+                flex-direction: column;
+            }
+        }
 
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-  }
+        /* Skills */
+        .skills span {
+            display: inline-block;
+            background: #1e3799;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 6px;
+            font-size: 14px;
+        }
 
-  /* --- Responsive --- */
-  @media(max-width: 768px){
-    section {
-      padding: 80px 5% 40px 5%;
-    }
-  }
-</style>
+        /* Footer */
+        footer {
+            background: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- --- Navigation --- -->
+<div class="hero">
+    <h1>Saujas Kant</h1>
+    <p>Aspiring Mechanical Engineer • Robotics Leader • STEM Researcher • Community Builder</p>
+</div>
+
 <nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
+    <a href="#about">About</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#projects">Projects</a>
+    <a href="#involvement">Involvement</a>
+    <a href="#academics">Academics</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<!-- --- About Section -
+<section id="about">
+    <div class="label">THIS IS MY PATH</div>
+    <h2>About Me</h2>
+    <p>
+        I’m a junior at Avon High School in Connecticut, where I’ve shaped my academic journey around engineering,
+        physics, and computational thinking. With a 4.1 weighted GPA and eight consecutive honor‑roll semesters,
+        I’ve built a strong foundation for Mechanical Engineering. My growth comes from what I build—robots,
+        prototypes, research models, and community programs.
+    </p>
+</section>
+
+<section id="highlights">
+    <div class="label">MY HIGHLIGHTS</div>
+    <h2>Engineering Moments That Shaped Me</h2>
+
+    <!-- 1 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>Robotics Mechanical Lead — VEX V5</h3>
+            <p>
+                I lead Avon High School’s first‑ever VEX V5 team (32610C Falconbots). In our debut year, we qualified
+                for the 2025 State Championship and finished 22nd—a milestone for a brand‑new team.
+            </p>
+        </div>
+        <div class="image">
+            <img src="<img src="images/afplsa.jpg" alt="Robotics">
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Founder — MakeItFixIt Engineering Club</h3>
+            <p>
+                I founded MakeItFixIt to design and 3D‑print custom mechanical solutions for teachers, clubs, and students.
+                I manage the full design‑to‑fabrication pipeline using CAD tools and rapid prototyping.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c7b1a3b9a9b" alt="3D Printing">
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>VEX IQ State Champion & World Championship Qualifier</h3>
+            <p>
+                I led my VEX IQ team to 1st Place (Design) and 3rd Place (Teamwork) at States, earning a berth at the
+                World Championship. I was recognized by the Superintendent for resilience and character.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="VEX IQ">
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Research Intern — University of Connecticut</h3>
+            <p>
+                Under Dr. Chang Liu, I worked on solving the Inverse Navier‑Stokes Equation using Physics‑Informed Neural
+                Networks and Least Squares methods. This project combined fluid dynamics, calculus, and Python.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Research">
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>Executive Co‑Chair & Treasurer — Connecticut Science Center</h3>
+            <p>
+                I lead youth‑driven science initiatives, manage budgets, and design public STEM exhibits—including a
+                soil‑and‑rock water filtration model showcased at CSC.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9c9a9b" alt="CSC">
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Congressional App Challenge — Skill Chain</h3>
+            <p>
+                I built Skill Chain, an app that helps students track and build competencies, and submitted it to the
+                Congressional App Challenge.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="App Development">
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="label">PROJECTS</div>
+    <h2>What I’ve Built</h2>
+
+    <!-- 1 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>Autonomous Line‑Following Robot</h3>
+            <p>
+                Built using Arduino, IR sensors, and PID control. Improved stability through chassis redesign and tuning.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581091870627-3a5f9c5a1a5d" alt="Robot">
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>3D‑Printed Gearbox Assembly</h3>
+            <p>
+                Designed a functional gearbox in Fusion 360 to study torque transfer and gear ratios.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c7b1a3b9a9b" alt="Gearbox">
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>CAD Portfolio — Desk Caddy & Wire Straightener</h3>
+            <p>
+                Created using Autodesk Inventor as part of Engineering Drafting & Design coursework.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="CAD">
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Sound & Light Illusion Exhibit</h3>
+            <p>
+                Developed an interactive exhibit demonstrating sensory illusions for museum visitors during the CSC Innovate program.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Illusion Exhibit">
+        </div>
+    </div>
+</section>
+
+<section id="involvement">
+    <div class="label">INVOLVEMENT</div>
+    <h2>Leadership & Community</h2>
+
+    <!-- 1 -->
+    <div class="two-col">
+        <div class="text">
+            <h3>Teen Advisory Council — CSC</h3>
+            <p>
+                As Treasurer and former Executive Co‑Chair, I help lead youth‑driven science initiatives, manage budgets,
+                and coordinate public STEM events.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9c9a9b" alt="TAC">
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Volunteer Work</h3>
+            <p>
+                I’ve contributed through Book Buddies, Extended School Year volunteering, Hindi USA youth service,
+                tutoring Math & Hindi, supporting Anurag Society for Special Needs, and city tutoring programs.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" alt="Volunteering">
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="two-col">
+        <div class="text">
+            <h3>Technical Skills</h3>
+            <div class="skills">
+                <span>Fusion 360</span>
+                <span>SolidWorks</span>
+                <span>Inventor</span>
+                <span>Arduino</span>
+                <span>Python</span>
+                <span>3D Printing</span>
+                <span>CAD Modeling</span>
+                <span>Mechanics</span>
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c7b1a3b9a9b" alt="Skills">
+        </div>
+    </div>
+</section>
+
+<section id="academics">
+    <div class="label">ACADEMICS</div>
+    <h2>Academic Journey</h2>
+
+    <div class="two-col">
+        <div class="text">
+            <h3>Coursework</h3>
+            <p>
+                AP CSA, AP Calculus BC, AP Physics 1 & 2, AP Environmental Science, AP Lang, APUSH, AP CSP,
+                Engineering Drafting & Design (H), Engineering for Robotics (H)
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Academics">
+        </div>
+    </div>
+
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Math & Science</h3>
+            <p>
+                AHS Math Team, MathCounts regional selection, Top 5% in AMC 8, Astronomy & Dynamic Planets Club.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="Math Science">
+        </div>
+    </div>
+
+    <div class="two-col">
+        <div class="text">
+            <h3>Languages & Cultural Achievements</h3>
+            <p>
+                State Seal of Biliteracy (Hindi), COLTS Gold Medal in Hindi Poetry, completed 6‑year FastTrack Hindi USA program.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Languages">
+        </div>
+    </div>
+
+    <div class="two-col reverse">
+        <div class="text">
+            <h3>Additional Achievements</h3>
+            <p>
+                Model UN, National Geographic Bee (School Winner), Black Belt in Mixed Martial Arts,
+                President’s Award for Academic Excellence, Junior Ranger (25 badges), First Responder’s Camp.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" alt="Achievements">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="label">LET’S CONNECT</div>
+    <h2>Contact</h2>
+
+    <div class="two-col">
+        <div class="text">
+            <p>Email: saujaskant@gmail.com</p>
+            <p>LinkedIn: (add link)</p>
+            <p>GitHub: (add link)</p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Contact">
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Saujas Kant — Future Mechanical Engineer
+</footer>
+
+</body>
+</html>
