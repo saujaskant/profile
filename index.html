@@ -89,30 +89,40 @@
             height: 260px;
             background: #ddd;
         }
-        /* Fix for side‑by‑side CAD images */
-        .image.double {
-            display: flex;
-            gap: 0;
-        }
-        
-        .image.double img {
-            width: 50% !important;
-            height: auto !important;
-            object-fit: contain !important;
-        }
+       /* Fix for side‑by‑side CAD images */
+.image.double {
+    display: flex;
+    gap: 0;
+}
 
-        /* Universal multi‑image layout for 2–5 images */
-        .image.multi {
-            display: flex;
-            gap: 0;
-        }
+.image.double img {
+    width: 50% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
 
-        .image.multi img {
-            flex: 1;                 /* Automatically divides space evenly */
-            height: auto !important;
-            object-fit: contain !important;
-            border-radius: 0;        /* We will override corners per image */
-        }
+/* Universal multi‑image layout for 2–5 images */
+.image.multi {
+    display: flex;
+    gap: 0;
+}
+
+.image.multi img {
+    flex: 1;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 0;
+}
+
+/* Rounded corners for first and last images */
+.image.multi img:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.image.multi img:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
 
         /* Alternating layout */
         .reverse {
@@ -511,6 +521,7 @@
 
 </body>
 </html>
+
 
 
 
