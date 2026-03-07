@@ -89,6 +89,30 @@
             height: 260px;
             background: #ddd;
         }
+        /* Fix for side‑by‑side CAD images */
+        .image.double {
+            display: flex;
+            gap: 0;
+        }
+        
+        .image.double img {
+            width: 50% !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+
+        /* Universal multi‑image layout for 2–5 images */
+        .image.multi {
+            display: flex;
+            gap: 0;
+        }
+
+        .image.multi img {
+            flex: 1;                 /* Automatically divides space evenly */
+            height: auto !important;
+            object-fit: contain !important;
+            border-radius: 0;        /* We will override corners per image */
+        }
 
         /* Alternating layout */
         .reverse {
@@ -264,12 +288,17 @@
         <h3>CAD Portfolio — Pen & Mobile Holder and YoYo</h3>
         <p>
             Designed and built an ergonomic pen and mobile holder alongside a precision‑balanced YoYo to explore 
-            complex revolving features and assembly constraints in Autodesk Inventor. 
+            complex revolving features and assembly constraints in Autodesk Inventor.
         </p>
     </div>
-    <div class="image" style="display: flex; gap: 0;">
-        <img src="images/SaujasCADPenandMobileholder.jpg" style="width: 50%; height: auto; border-radius: 12px 0 0 12px;" alt="Gearbox View 1">
-        <img src="images/SaujasCADYoYo.jpg" style="width: 50%; height: auto; border-radius: 0 12px 12px 0;" alt="Gearbox View 2">
+
+    <div class="image double">
+        <img src="images/SaujasCADPenandMobileholder.jpg" 
+             alt="Pen and Mobile Holder CAD" 
+             style="border-radius: 12px 0 0 12px;">
+        <img src="images/SaujasCADYoYo.jpg" 
+             alt="YoYo CAD" 
+             style="border-radius: 0 12px 12px 0;">
     </div>
     </div>
 
@@ -282,9 +311,14 @@
             Focused on geometric dimensioning and technical drawing standards.
         </p>
     </div>
-    <div class="image" style="display: flex; gap: 0;">
-        <img src="images/SaujasCADDeskCaddy.jpg" style="width: 50%; height: auto; border-radius: 12px 0 0 12px;" alt="Desk Caddy CAD">
-        <img src="images/SaujasCADWireStraightener.jpg" style="width: 50%; height: auto; border-radius: 0 12px 12px 0;" alt="Wire Straightener CAD">
+
+    <div class="image double">
+        <img src="images/SaujasCADDeskCaddy.jpg" 
+             alt="Desk Caddy CAD" 
+             style="border-radius: 12px 0 0 12px;">
+        <img src="images/SaujasCADWireStraightener.jpg" 
+             alt="Wire Straightener CAD" 
+             style="border-radius: 0 12px 12px 0;">
     </div>
     </div>
 
@@ -477,6 +511,7 @@
 
 </body>
 </html>
+
 
 
 
