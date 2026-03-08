@@ -1,4 +1,3 @@
-/* force refresh */
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,71 +68,36 @@
             color: #0a3d62;
         }
 
+        /* Two-column layout */
         .two-col {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-    margin: 50px 0;
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .two-col .text {
+            flex: 1 1 55%;
+        }
+        .two-col .image {
+            flex: 1 1 40%;
+        }
 
-.two-col .text {
-    flex: 1 1 55%;
-}
+        /* UNIVERSAL STACKED IMAGE SYSTEM */
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            object-fit: contain;
+            background: #ddd;
+        }
 
-/* default single-image behavior */
-.two-col .image {
-    flex: 1 1 40%;
-}
-
-.two-col .image img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    height: 260px;
-    background: #ddd;
-}
-
-/* side‑by‑side CAD images */
-.image.double {
-    display: flex;
-    gap: 0;
-}
-
-.image.double img {
-    width: 50% !important;
-    height: auto !important;
-    object-fit: contain !important;
-}
-
-/* universal multi‑image layout */
-.image.multi {
-    display: flex;
-    gap: 0;
-}
-
-.image.multi img {
-    flex: 1;
-    height: auto !important;
-    object-fit: contain !important;
-    border-radius: 0;
-}
-
-/* rounded corners for first and last images */
-.image.multi img:first-child {
-    border-radius: 12px 0 0 12px;
-}
-
-.image.multi img:last-child {
-    border-radius: 0 12px 12px 0;
-}
-
-/* make multi-image blocks full-width inside two-col */
-.two-col .image.double,
-.two-col .image.multi {
-    flex: 1 1 100% !important;
-    display: flex !important;
-}
+        /* Remove forced cropping */
+        .two-col .image img {
+            height: auto !important;
+            object-fit: contain !important;
+        }
 
         /* Alternating layout */
         .reverse {
@@ -165,14 +129,6 @@
             padding: 30px;
             margin-top: 40px;
         }
-
-        /* Override two-col behavior for multi-image blocks */
-        .two-col .image.double,
-        .two-col .image.multi {
-            flex: 1 1 100% !important;   /* allow full width */
-            display: flex !important;    /* ensure flexbox activates */
-        }
-
     </style>
 </head>
 
@@ -261,7 +217,7 @@
             </p>
         </div>
         <div class="image">
-            <img src="images/SaujasInternshipUCONNPINN.jpg" style="max-width:100%; height:auto;" alt="Research">
+            <img src="images/SaujasInternshipUCONNPINN.jpg" alt="Research">
         </div>
     </div>
 
@@ -313,40 +269,34 @@
 
     <!-- 2 -->
     <div class="two-col reverse">
-    <div class="text">
-        <h3>CAD Portfolio — Pen & Mobile Holder and YoYo</h3>
-        <p>
-            Designed and built an ergonomic pen and mobile holder alongside a precision‑balanced YoYo to explore 
-            complex revolving features and assembly constraints in Autodesk Inventor.
-        </p>
-    </div>
+        <div class="text">
+            <h3>CAD Portfolio — Pen & Mobile Holder and YoYo</h3>
+            <p>
+                Designed and built an ergonomic pen and mobile holder alongside a precision‑balanced YoYo to explore 
+                complex revolving features and assembly constraints in Autodesk Inventor.
+            </p>
+        </div>
 
-    <div class="image multi">
-        <img src="images/SaujasCADPenandMobileholder.jpg" 
-         alt="Pen and Mobile Holder CAD">
-        <img src="images/SaujasCADYoYo.jpg" 
-         alt="YoYo CAD">
-    </div>
+        <div class="image">
+            <img src="images/SaujasCADPenandMobileholder.jpg" alt="">
+            <img src="images/SaujasCADYoYo.jpg" alt="">
+        </div>
     </div>
 
     <!-- 3 -->
     <div class="two-col">
-    <div class="text">
-        <h3>CAD Portfolio — Desk Caddy & Wire Straightener</h3>
-        <p>
-            Created using Autodesk Inventor as part of Engineering Drafting & Design coursework. 
-            Focused on geometric dimensioning and technical drawing standards.
-        </p>
-    </div>
+        <div class="text">
+            <h3>CAD Portfolio — Desk Caddy & Wire Straightener</h3>
+            <p>
+                Created using Autodesk Inventor as part of Engineering Drafting & Design coursework. 
+                Focused on geometric dimensioning and technical drawing standards.
+            </p>
+        </div>
 
-    <div class="image double">
-        <img src="images/SaujasCADDeskCaddy.jpg" 
-             alt="Desk Caddy CAD" 
-             style="border-radius: 12px 0 0 12px;">
-        <img src="images/SaujasCADWireStraightener.jpg" 
-             alt="Wire Straightener CAD" 
-             style="border-radius: 0 12px 12px 0;">
-    </div>
+        <div class="image">
+            <img src="images/SaujasCADDeskCaddy.jpg" alt="">
+            <img src="images/SaujasCADWireStraightener.jpg" alt="">
+        </div>
     </div>
 
     <!-- 4 -->
@@ -358,7 +308,7 @@
             </p>
         </div>
         <div class="image">
-            <img src="images/SaujasCTSCSensoryillusionExhibit.jpg" style="max-width:100%; height:auto;" alt="Illusion Exhibit">
+            <img src="images/SaujasCTSCSensoryillusionExhibit.jpg" alt="Illusion Exhibit">
         </div>
     </div>
 </section>
@@ -376,7 +326,7 @@
             </p>
         </div>
         <div class="image">
-            <img src="images/CSCTeenInnovation.jpg" style="max-width:100%; height:auto;" alt="Teen innovation">
+            <img src="images/CSCTeenInnovation.jpg" alt="Teen innovation">
         </div>
     </div>
 
@@ -443,11 +393,8 @@
             <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="Math Science">
         </div>
     </div>
-
-    <!-- REMOVED Languages & Cultural Achievements section -->
 </section>
 
-<!-- NEW SECTION: HINDI USA -->
 <section id="hindiusa">
     <div class="label">HINDI USA</div>
     <h2>Hindi USA — Cultural & Language Leadership</h2>
@@ -458,8 +405,7 @@
             <p>
                 As a Hindi USA youth teacher and mentor, I help younger students build confidence in reading, writing, 
                 and speaking Hindi. I support classroom activities, guide students during cultural events, and assist 
-                teachers with lesson preparation. Teaching has strengthened my communication skills and deepened my 
-                connection to the Hindi language and community.
+                teachers with lesson preparation.
             </p>
             <p>
                 Teacher Profile: 
@@ -469,7 +415,7 @@
             </p>
         </div>
         <div class="image">
-            <img src="images/Saujasteacher.jpg" style="max-width:100%; height:auto;" alt="Hindi USA Photo 1">
+            <img src="images/Saujasteacher.jpg" alt="Hindi USA Photo 1">
         </div>
     </div>
 
@@ -478,9 +424,7 @@
             <h3>Community Events & Cultural Engagement</h3>
             <p>
                 Achieved the State Seal of Biliteracy (Hindi), earned the COLTS Gold Medal in Hindi Poetry, and 
-                completed the 6‑year FastTrack Hindi USA program. Alongside academics, I participated in cultural 
-                showcases, poetry recitations, and youth‑led community programs that celebrate Indian heritage and 
-                language—experiences that strengthened my leadership, teamwork, and public‑speaking skills.
+                completed the 6‑year FastTrack Hindi USA program.
             </p>
             <p>
                 COLT Results Document:  
@@ -495,8 +439,6 @@
     </div>
 </section>
 
-
-<!-- NEW SECTION: ANURAG SOCIETY -->
 <section id="anurag">
     <div class="label">ANURAG SOCIETY</div>
     <h2>Anurag Society for Special Needs</h2>
@@ -506,8 +448,7 @@
             <h3>Volunteer — Anurag Society for Special Needs</h3>
             <p>
                 I support Anurag Society’s mission by assisting children with special needs during community 
-                events, learning sessions, and recreational activities. This work has strengthened my empathy, 
-                patience, and commitment to inclusive education.
+                events, learning sessions, and recreational activities.
             </p>
         </div>
         <div class="image">
@@ -538,17 +479,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
