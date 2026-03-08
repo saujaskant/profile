@@ -154,6 +154,14 @@
             padding: 30px;
             margin-top: 40px;
         }
+
+        /* Override two-col behavior for multi-image blocks */
+        .two-col .image.double,
+        .two-col .image.multi {
+            flex: 1 1 100% !important;   /* allow full width */
+            display: flex !important;    /* ensure flexbox activates */
+        }
+
     </style>
 </head>
 
@@ -521,6 +529,7 @@
 
 </body>
 </html>
+
 
 
 
