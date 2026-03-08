@@ -68,28 +68,32 @@
             color: #0a3d62;
         }
 
-        /* Two-column layout */
         .two-col {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            margin: 50px 0;
-        }
-        .two-col .text {
-            flex: 1 1 55%;
-        }
-        .two-col .image {
-            flex: 1 1 40%;
-        }
-        .two-col .image img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            height: 260px;
-            background: #ddd;
-        }
-       /* Fix for side‑by‑side CAD images */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.two-col .text {
+    flex: 1 1 55%;
+}
+
+/* default single-image behavior */
+.two-col .image {
+    flex: 1 1 40%;
+}
+
+.two-col .image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    height: 260px;
+    background: #ddd;
+}
+
+/* side‑by‑side CAD images */
 .image.double {
     display: flex;
     gap: 0;
@@ -101,7 +105,7 @@
     object-fit: contain !important;
 }
 
-/* Universal multi‑image layout for 2–5 images */
+/* universal multi‑image layout */
 .image.multi {
     display: flex;
     gap: 0;
@@ -114,7 +118,7 @@
     border-radius: 0;
 }
 
-/* Rounded corners for first and last images */
+/* rounded corners for first and last images */
 .image.multi img:first-child {
     border-radius: 12px 0 0 12px;
 }
@@ -123,6 +127,12 @@
     border-radius: 0 12px 12px 0;
 }
 
+/* make multi-image blocks full-width inside two-col */
+.two-col .image.double,
+.two-col .image.multi {
+    flex: 1 1 100% !important;
+    display: flex !important;
+}
 
         /* Alternating layout */
         .reverse {
@@ -529,6 +539,7 @@
 
 </body>
 </html>
+
 
 
 
