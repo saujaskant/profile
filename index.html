@@ -14,18 +14,19 @@
             line-height: 1.6;
         }
 
-        /* Hero */
-        .hero {
+        /*  */
+        . {
             padding: 130px 20px;
-            text-align: center;
+            text-align: left;   /* NEW — aligns text for two‑column layout */
             background: #ffffff;
         }
-        .hero h1 {
+        }
+        . h1 {
             font-size: 56px;
             margin: 0;
             font-weight: 700;
         }
-        .hero p {
+        . p {
             font-size: 22px;
             margin-top: 15px;
             color: #444;
@@ -156,10 +157,23 @@
 
 <body>
 
-<div class="hero">
-    <h1>Saujas Kant</h1>
-    <p>Aspiring Mechanical Engineer • Robotics Leader • STEM Researcher • Community Builder</p>
+<div class="hero two-col reverse" style="padding-top:120px; padding-bottom:80px;">
+
+    <!-- RIGHT SIDE — PHOTO PLACEHOLDER -->
+    <div class="image">
+        <img src="images/SaujasPhotographHeader.jpg" alt="">
+    </div>
+
+    <!-- LEFT SIDE — TEXT -->
+    <div class="text">
+        <h1 style="font-size:56px; margin-bottom:10px;">Saujas Kant</h1>
+        <p style="font-size:22px; color:#444;">
+            Aspiring Mechanical Engineer • Robotics Leader • STEM Researcher • Community Builder
+        </p>
+    </div>
+
 </div>
+
 
 <nav>
     <a href="#about">About</a>
@@ -567,6 +581,7 @@
 <footer>
     © 2026 Saujas Kant — Future Mechanical Engineer
 </footer>
+
 
 
 
