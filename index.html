@@ -14,44 +14,6 @@
             line-height: 1.6;
         }
 
-        /* HERO SECTION (FIXED) */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 130px 20px;
-            background: #ffffff;
-        }
-
-        .hero-text {
-            flex: 1;
-            text-align: left;
-        }
-
-        .hero-text h1 {
-            font-size: 56px;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .hero-text p {
-            font-size: 22px;
-            margin-top: 15px;
-            color: #444;
-        }
-
-        .hero-image {
-            flex: 0 0 350px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
         /* Navigation */
         nav {
             text-align: center;
@@ -94,7 +56,7 @@
             color: #0a3d62;
         }
 
-        /* Two-column layout (used elsewhere on site) */
+        /* Two-column layout (used elsewhere) */
         .two-col {
             display: flex;
             flex-wrap: wrap;
@@ -109,7 +71,6 @@
             flex: 1 1 40%;
         }
 
-        /* UNIVERSAL IMAGE RULES */
         .image img {
             width: 100%;
             height: auto;
@@ -119,20 +80,13 @@
             background: #ddd;
         }
 
-        /* Alternating layout */
         .reverse {
             flex-direction: row-reverse;
         }
 
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: left;
-            }
-            .hero-image {
-                width: 70%;
-            }
-            .two-col, .reverse {
+            .two-col,
+            .reverse {
                 flex-direction: column;
             }
         }
@@ -157,7 +111,6 @@
             margin-top: 40px;
         }
 
-        /* Side-by-side layout for CAD sections */
         .image.side-by-side {
             display: flex;
             gap: 14px;
@@ -169,7 +122,6 @@
             border-radius: 12px;
         }
 
-        /* Mini-subsection spacing */
         .mini-section {
             margin-bottom: 50px;
         }
@@ -178,18 +130,22 @@
 
 <body>
 
-<header class="hero">
-    <div class="hero-text">
-        <h1>Saujas Kant</h1>
-        <p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:40px;padding:130px 20px;background:#ffffff;">
+    <!-- LEFT: TEXT -->
+    <div style="flex:1;text-align:left;">
+        <h1 style="font-size:56px;margin:0;font-weight:700;">Saujas Kant</h1>
+        <p style="font-size:22px;margin-top:15px;color:#444;">
             Aspiring Mechanical Engineer • Robotics Leader • STEM Researcher • Community Builder
         </p>
     </div>
 
-    <div class="hero-image">
-        <img src="images/SaujasPhotographHeader.jpg" alt="">
+    <!-- RIGHT: PHOTO PLACEHOLDER -->
+    <div style="flex:0 0 350px;">
+        <img src="https://via.placeholder.com/400x450.png?text=Your+Photo+Here"
+             alt="Profile Photo"
+             style="width:100%;height:auto;border-radius:12px;display:block;">
     </div>
-</header>
+</div>
 
 <nav>
     <a href="#about">About</a>
@@ -598,6 +554,7 @@
 <footer>
     © 2026 Saujas Kant — Future Mechanical Engineer
 </footer>
+
 
 
 
