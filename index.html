@@ -14,22 +14,42 @@
             line-height: 1.6;
         }
 
-        /*  */
-        . {
+        /* HERO SECTION (FIXED) */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
             padding: 130px 20px;
-            text-align: left;   /* NEW — aligns text for two‑column layout */
             background: #ffffff;
         }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
         }
-        . h1 {
+
+        .hero-text h1 {
             font-size: 56px;
             margin: 0;
             font-weight: 700;
         }
-        . p {
+
+        .hero-text p {
             font-size: 22px;
             margin-top: 15px;
             color: #444;
+        }
+
+        .hero-image {
+            flex: 0 0 350px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
         }
 
         /* Navigation */
@@ -74,7 +94,7 @@
             color: #0a3d62;
         }
 
-        /* Two-column layout */
+        /* Two-column layout (used elsewhere on site) */
         .two-col {
             display: flex;
             flex-wrap: wrap;
@@ -89,7 +109,7 @@
             flex: 1 1 40%;
         }
 
-        /* UNIVERSAL STACKED IMAGE SYSTEM */
+        /* UNIVERSAL IMAGE RULES */
         .image img {
             width: 100%;
             height: auto;
@@ -99,18 +119,19 @@
             background: #ddd;
         }
 
-        /* Remove forced cropping */
-        .two-col .image img {
-            height: auto !important;
-            object-fit: contain !important;
-        }
-
         /* Alternating layout */
         .reverse {
             flex-direction: row-reverse;
         }
 
         @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: left;
+            }
+            .hero-image {
+                width: 70%;
+            }
             .two-col, .reverse {
                 flex-direction: column;
             }
@@ -158,7 +179,6 @@
 <body>
 
 <header class="hero">
-    <!-- LEFT: TEXT -->
     <div class="hero-text">
         <h1>Saujas Kant</h1>
         <p>
@@ -166,7 +186,6 @@
         </p>
     </div>
 
-    <!-- RIGHT: PHOTO PLACEHOLDER -->
     <div class="hero-image">
         <img src="https://via.placeholder.com/400x450.png?text=Your+Photo+Here" alt="Profile Photo">
     </div>
@@ -181,6 +200,7 @@
     <a href="#activities">Beyond the classroom</a>
     <a href="#contact">Contact</a>
 </nav>
+
 
 <section id="about">
     <div class="label">THIS IS MY PATH</div>
@@ -568,7 +588,7 @@
         <div class="text">
             <p>Email: <strong>saujaskant@gmail.com</strong></p>
             <p>LinkedIn: (add link)</p>
-            <p>GitHub: (add link)</p>
+            <p>GitHub: https://github.com/saujaskant </p>
         </div>
         <div class="image">
             <img src="images/SaujasPhotographFooter.jpg" alt="">
@@ -578,6 +598,7 @@
 <footer>
     © 2026 Saujas Kant — Future Mechanical Engineer
 </footer>
+
 
 
 
